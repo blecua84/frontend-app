@@ -1,8 +1,9 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
-var cucumberReportDirectory = 'output';
-var jsonReportFile = 'cucumber_report.json';
+var htmlReportFile = 'e2e/cucumber_report.html';
+var jsonReportFile = 'e2e/cucumber_report.json';
+var screenshotsPath = 'e2e/screenshots/';
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -18,7 +19,7 @@ exports.config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
     require: ['./src/steps/**/*.steps.ts'],
-    format: 'json:e2e/cucumber_report.json',
+    format: 'json:' + jsonReportFile,
   },
   onPrepare() {
     require('ts-node').register({
@@ -31,9 +32,9 @@ exports.config = {
     var options = {
         name: 'Ragnarok App',
         theme: 'bootstrap',
-        jsonFile: 'e2e/cucumber_report.json',
-        output: 'e2e/cucumber_report.html',
-        screenshotsDirectory: 'e2e/screenshots/',
+        jsonFile: jsonReportFile,
+        output: htmlReportFile,
+        screenshotsDirectory: screenshotsPath,
         storeScreenshots: true,
         reportSuiteAsScenarios: true,
         launchReport: true,
