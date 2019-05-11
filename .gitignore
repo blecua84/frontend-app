@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Protractor generated files
+/e2e/cucumber_report.html
+/e2e/cucumber_report.json
+/e2e/screenshots
